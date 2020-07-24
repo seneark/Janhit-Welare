@@ -70,6 +70,15 @@ router.post('/sendNotificationHouse', AuthMiddleware, (req, res) => {
             }
         })
         .catch(err => console.log(err));
+});
+
+// @route   GET notification/getNotification
+// @desc    Gets all the notification for the user
+router.get('/getNotification', AuthMiddleware, (req, res) => {
+    Notification.find({user_id: req.user._id}, ['title', 'body'])
+        .then(notification => {
+            res.json({notification: notification.toString()});
+        })
 })
 
 module.exports = router;
