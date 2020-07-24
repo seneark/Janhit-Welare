@@ -27,13 +27,13 @@ UserSchema.methods.addNotification = function(notification){
 	updatedNotification.push({
 		itemId: notification._id
 	});
-	const updatedNotification_saved = {
+	this.userNotification = {
 		items: updatedNotification
 	};
-	this.userNotification = updatedNotification_saved;
 	return this.save();
 
 }
 UserSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model("User",UserSchema);
+
 
