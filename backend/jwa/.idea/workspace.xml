@@ -20,11 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59c6d949-fc56-4bb3-b5a9-bda190dc639c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Routes/notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/notification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Feed.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Feed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Notification.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +65,8 @@
       <updated>1595592270745</updated>
       <workItem from="1595592272551" duration="11655000" />
       <workItem from="1595607208939" duration="1387000" />
-      <workItem from="1595608614435" duration="4492000" />
+      <workItem from="1595608614435" duration="4925000" />
+      <workItem from="1595614498835" duration="46000" />
     </task>
     <servers />
   </component>
@@ -88,13 +86,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog" timestamp="1595612336154">
+    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog" timestamp="1595614171564">
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
-    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595612336154" />
-    <state x="2303" y="160" width="992" height="737" key="SettingsEditor" timestamp="1595608589046">
+    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595614171564" />
+    <state x="2303" y="160" width="992" height="737" key="SettingsEditor" timestamp="1595614483240">
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
-    <state x="2303" y="160" width="992" height="737" key="SettingsEditor/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595608589046" />
+    <state x="2303" y="160" width="992" height="737" key="SettingsEditor/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595614483240" />
   </component>
 </project>

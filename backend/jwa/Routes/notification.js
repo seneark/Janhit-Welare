@@ -101,6 +101,8 @@ router.get('/getNotification', AuthMiddleware, (req, res) => {
         })
 });
 
+// @route   GET notification/deleteNotification
+// @desc    Delete Notification
 router.get('/deleteNotification', AuthMiddleware, (req, res) => {
     const ID = req.query.id;
     console.log(ID);
@@ -115,6 +117,8 @@ router.get('/deleteNotification', AuthMiddleware, (req, res) => {
         }).catch(err => console.log(err))
 });
 
+// @route   GET notification/getFeed
+// @desc    Get all the feeds of a user
 router.get('/getFeed', AuthMiddleware, (req, res) => {
     Feed.find({user_id : req.user._id}).sort({date:-1})
         .then(feed => {
