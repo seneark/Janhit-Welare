@@ -1,0 +1,13 @@
+<%- include("partials/header") %>
+<div class="container-fluid">
+<form action="/upload" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="exampleInputFile">Add image</label>
+    <input type="file" id="exampleInputFile" name="image">
+    <p class="help-block">Choose an Image file to Uplaod</p>
+  </div>
+  <button type="submit" class="btn btn-default">Upload</button>
+</form>
+</div>
+
+<%- include("partials/footer") %>
