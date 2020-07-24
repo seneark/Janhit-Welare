@@ -14,6 +14,10 @@ const NotificationSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
+    feed_id:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Feed"
+    },
     admin_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
@@ -23,10 +27,6 @@ const NotificationSchema = new mongoose.Schema({
         ref: "User"
     },
 
-    // item_id:{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Event"
-    // }
 });
 
 

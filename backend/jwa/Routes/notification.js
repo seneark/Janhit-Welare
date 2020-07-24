@@ -3,6 +3,7 @@ const router = express.Router();
 const AuthMiddleware = require("../middleware/isAuth");
 const Notification = require('../modules/Notification');
 const User = require('../modules/user');
+const Feed = require('../modules/Feed');
 
 // @route   GET notification/test
 // @desc    For testing the route
@@ -22,10 +23,19 @@ router.post('/sendNotificationUser', AuthMiddleware, (req, res) => {
         .then(user => {
             if (user) {
                 let ID = user._id;
+                const newFeed = new Feed({
+                    title:title,
+                    body: body,
+                    date : new Date(),
+                    admin_id: req.user._id,
+                    user_id: ID
+                });
+                newFeed.save();
                 const newNotification = new Notification({
                     title: title,
                     body: body,
                     date: new Date(),
+                    feed_id: newFeed._id,
                     admin_id: req.user._id,
                     user_id: ID
                 });
@@ -35,6 +45,7 @@ router.post('/sendNotificationUser', AuthMiddleware, (req, res) => {
                         user.addNotification(newNotification);
                     })
                     .catch(err => console.log(err));
+                res.status(200).json({msg: "success"})
             }
         })
         .catch(err => console.log(err));
@@ -53,10 +64,19 @@ router.post('/sendNotificationHouse', AuthMiddleware, (req, res) => {
             if (user) {
                 for (let i = 0; i < user.length; i++) {
                     console.log(user[i]);
+                    const newFeed = new Feed({
+                        title:title,
+                        body: body,
+                        date : new Date(),
+                        admin_id: req.user._id,
+                        user_id: user[i]._id
+                    });
+                    newFeed.save();
                     const newNotification = new Notification({
                         title: title,
                         body: body,
                         date: new Date(),
+                        feed_id: newFeed._id,
                         admin_id: req.user._id,
                         user_id: user[i]._id
                     });
@@ -75,9 +95,9 @@ router.post('/sendNotificationHouse', AuthMiddleware, (req, res) => {
 // @route   GET notification/getNotification
 // @desc    Gets all the notification for the user
 router.get('/getNotification', AuthMiddleware, (req, res) => {
-    Notification.find({user_id: req.user._id}, ['title', 'body'])
+    Notification.find({user_id: req.user._id}, ['title', 'body']).sort({date:-1})
         .then(notification => {
-            res.json({notification: notification.toString()});
+            res.json({notification: notification});
         })
 });
 
@@ -93,6 +113,13 @@ router.get('/deleteNotification', AuthMiddleware, (req, res) => {
                     res.redirect('/');
                 }).catch(err => console.log(err))
         }).catch(err => console.log(err))
+});
+
+router.get('/getFeed', AuthMiddleware, (req, res) => {
+    Feed.find({user_id : req.user._id}).sort({date:-1})
+        .then(feed => {
+            res.json({feed: feed});
+        })
 })
 
 module.exports = router;
