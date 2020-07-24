@@ -79,6 +79,20 @@ router.get('/getNotification', AuthMiddleware, (req, res) => {
         .then(notification => {
             res.json({notification: notification.toString()});
         })
+});
+
+router.get('/deleteNotification', AuthMiddleware, (req, res) => {
+    const ID = req.query.id;
+    console.log(ID);
+    Notification.deleteOne({_id: ID})
+        .then(result => {
+            console.log("deleted");
+            User.findById(req.user._id)
+                .then(user => {
+                    user.removeFromUser(ID);
+                    res.redirect('/');
+                }).catch(err => console.log(err))
+        }).catch(err => console.log(err))
 })
 
 module.exports = router;

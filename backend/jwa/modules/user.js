@@ -33,6 +33,12 @@ UserSchema.methods.addNotification = function(notification){
 	return this.save();
 
 }
+UserSchema.methods.removeFromUser = function(itemId){
+	this.userNotification.items = this.userNotification.items.filter(item => {
+		return item.itemId.toString() !== itemId.toString();
+	});
+	return this.save();
+}
 UserSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model("User",UserSchema);
 

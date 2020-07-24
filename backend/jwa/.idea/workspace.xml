@@ -20,15 +20,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59c6d949-fc56-4bb3-b5a9-bda190dc639c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Routes/notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
   </component>
   <component name="ProjectId" id="1f8GNs8aPDnFkCkfOUnnIXPMq9s" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -40,6 +53,9 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -49,7 +65,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1595592270745</updated>
-      <workItem from="1595592272551" duration="8887000" />
+      <workItem from="1595592272551" duration="11655000" />
+      <workItem from="1595607208939" duration="1387000" />
+      <workItem from="1595608614435" duration="2361000" />
     </task>
     <servers />
   </component>
@@ -66,11 +84,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog" timestamp="1595597758633">
+    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog" timestamp="1595611105327">
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
-    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595597758633" />
+    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595611105327" />
+    <state x="2303" y="160" width="992" height="737" key="SettingsEditor" timestamp="1595608589046">
+      <screen x="1920" y="0" width="1680" height="1050" />
+    </state>
+    <state x="2303" y="160" width="992" height="737" key="SettingsEditor/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595608589046" />
   </component>
 </project>
