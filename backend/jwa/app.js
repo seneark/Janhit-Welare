@@ -13,6 +13,7 @@ var User = require("./modules/user.js");
 var Gallery = require("./modules/gallery.js");
 const Notification = require("./Routes/notification");
 const Complaint = require('./Routes/complaints');
+const Dashboard = require('./Routes/dashboard');
 
 //Database setup
 mongoose.connect("mongodb://127.0.0.1:27017/janhit", {
@@ -23,7 +24,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/janhit", {
 app.set("view engine", "ejs");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(
   require("express-session")({
@@ -75,6 +76,7 @@ app.get("/", function (req, res) {
 
 app.use('/notification', Notification);
 app.use('/complaint', Complaint);
+app.use('/dashboard', Dashboard);
 
 //Registration GET Route
 app.get("/register", function (req, res) {
@@ -122,7 +124,7 @@ app.get("/loginadmin", function (req, res) {
 app.post(
   "/loginuser",
   passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/dashboard",
     failureRedirect: "/loginuser",
   }),
   function (req, res) {

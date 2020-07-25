@@ -20,10 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59c6d949-fc56-4bb3-b5a9-bda190dc639c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Routes/complaints.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/Complaint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Routes/dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/HomePage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/dashboard.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/complaints.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/complaints.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/header.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../template/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../template/dashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +40,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -53,9 +60,19 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -69,6 +86,7 @@
       <workItem from="1595607208939" duration="1387000" />
       <workItem from="1595608614435" duration="4925000" />
       <workItem from="1595614498835" duration="46000" />
+      <workItem from="1595692483260" duration="7896000" />
     </task>
     <servers />
   </component>
@@ -88,10 +106,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog" timestamp="1595666395545">
+    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog" timestamp="1595706194033">
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
-    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595666395545" />
+    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595706194033" />
     <state x="2566" y="231" width="457" height="595" key="RollbackChangesDialog" timestamp="1595663158983">
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
