@@ -12,6 +12,7 @@ require("dotenv/config");
 var User = require("./modules/user.js");
 var Gallery = require("./modules/gallery.js");
 const Notification = require("./Routes/notification");
+const Complaint = require('./Routes/complaints');
 
 //Database setup
 mongoose.connect("mongodb://127.0.0.1:27017/janhit", {
@@ -73,6 +74,8 @@ app.get("/", function (req, res) {
 });
 
 app.use('/notification', Notification);
+app.use('/complaint', Complaint);
+
 //Registration GET Route
 app.get("/register", function (req, res) {
   res.render("register.ejs");
