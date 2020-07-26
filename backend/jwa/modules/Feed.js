@@ -14,18 +14,18 @@ const FeedSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
+    isComplaint: {
+        type: Boolean,
+        required: true
+    },
     img: {
         data: Buffer,
         contentType: String
     },
-    admin_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
-    },
-    user_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
-    },
+    house_no: {
+        type: String,
+        required: true,
+    }
 });
 
 

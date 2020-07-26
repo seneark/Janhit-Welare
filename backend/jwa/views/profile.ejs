@@ -4,35 +4,56 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
           integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/profile.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 <section class="profile">
-    <header class="header">
-        <div class="details">
-            <div class="circle">
-                <p class="circle-text"><%=user.username[0]%></p>
-            </div>
-            <h1 class="heading" style="font-size: 60px;letter-spacing: 10px;"><%=user.username%></h1>
-            <div class="location">
-                <p style="font-size: 30px"><%=user.house%>, Floor No. <%=user.floor%></p>
-            </div>
-            <div class="stats">
-                <div class="col-4">
-                    <h4><%=user.phone%></h4>
-                    <p>Phone No.</p>
-                </div>
-                <div class="col-4">
-                    <h4><%=user.amount%></h4>
-                    <p>Amount to be paid</p>
-                </div>
-                <div class="col-4">
-                    <h4><%=user.paid%></h4>
-                    <p>Paid Amount</p>
-                </div>
-            </div>
-        </div>
-    </header>
-</section>
 
+    <main class="profile">
+        <section class="container">
+            <div class="profile-bg"></div>
+            <div class="profile-image">
+            </div>
+            <section class="profile-info">
+                <h1 class="name"><%= user.username %></h1>
+                <h1 class="info">
+                    <% if(user.admin){ %>
+                        Admin
+                    <% } else{ %>
+                        User
+                    <% } %>
+                </h1>
+                <h2>ABOUT</h2>
+                <p>
+                    <span>House no.</span>&nbsp;&nbsp; <%= user.house %><br/>
+                    <span>Floor no.</span>&nbsp;&nbsp; <%= user.floor %>
+                </p>
+
+            </section>
+        </section>
+        <section class="statistics">
+            <p><strong>29</strong> Followers</p>
+            <p><strong>184</strong> Following</p>
+            <p><strong>6</strong> Likes</p>
+        </section>
+    </main>
+    <p class="heading">Statement Summary</p>
+    <% feed.forEach(function(Feed){ %>
+    <div class="card" style="width: 45rem; background-color: white; border-radius:10px; margin-left: 4%">
+        <div class="card-body">
+            <div style="display: flex; flex-direction: row; justify-content: space-between">
+                <h5 class="card-title"><%= Feed.title %></h5>
+                <%if(Feed.isComplaint) {%>
+                    <h6 style="color:red">Complaint</h6>
+                <%} %>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted"><%= Feed.date.toString().split('GMT')[0] %>></h6>
+            <p class="card-text"><%= Feed.body %></p>
+        </div>
+    </div>
+    <br/>
+    <% }) %>
+</section>
 </body>
 </html>

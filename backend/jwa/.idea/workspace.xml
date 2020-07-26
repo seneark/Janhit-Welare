@@ -20,11 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59c6d949-fc56-4bb3-b5a9-bda190dc639c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/complaints.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/notification.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/complaints.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/notification.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/complaints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/notification.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paytm/services/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/paytm/services/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/response.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/response.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Complaint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Feed.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Feed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/dashboard.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +66,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -67,8 +77,8 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/views" />
       <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/views" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -84,7 +94,9 @@
       <workItem from="1595608614435" duration="4925000" />
       <workItem from="1595614498835" duration="46000" />
       <workItem from="1595692483260" duration="8052000" />
-      <workItem from="1595743048139" duration="8781000" />
+      <workItem from="1595743048139" duration="9303000" />
+      <workItem from="1595762195338" duration="3905000" />
+      <workItem from="1595795986880" duration="8055000" />
     </task>
     <servers />
   </component>
@@ -104,10 +116,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2532" y="275" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595749749475">
+    <state x="2532" y="275" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595800731116">
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
-    <state x="2532" y="275" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595749749475" />
+    <state x="2532" y="275" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595800731116" />
     <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog" timestamp="1595706194033">
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
@@ -120,5 +132,13 @@
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
     <state x="2303" y="160" width="992" height="737" key="SettingsEditor/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595614483240" />
+    <state x="2608" y="442" width="383" height="173" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595769051744">
+      <screen x="1920" y="0" width="1680" height="1050" />
+    </state>
+    <state x="2608" y="442" width="383" height="173" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595769051744" />
+    <state x="2462" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1595762221700">
+      <screen x="1920" y="0" width="1680" height="1050" />
+    </state>
+    <state x="2462" y="231" width="672" height="678" key="search.everywhere.popup/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595762221700" />
   </component>
 </project>

@@ -12,7 +12,6 @@ require("dotenv/config");
 var User = require("./modules/user.js");
 var Gallery = require("./modules/gallery.js");
 const Notification = require("./Routes/notification");
-const Complaint = require('./Routes/complaints');
 const Dashboard = require('./Routes/dashboard');
 const Payment = require('./Routes/payment');
 
@@ -78,7 +77,6 @@ app.get("/", function (req, res) {
 });
 
 app.use('/notification', Notification);
-app.use('/complaint', Complaint);
 app.use('/dashboard', Dashboard);
 app.use('/payWithPaytm', Payment);
 

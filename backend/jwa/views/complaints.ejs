@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>DashBoard</title>
-    <!-- Bootstrap CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints</title>
+
+    <!-- Bootstrap CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- normal css -->
+    <link rel="stylesheet" href="/complaints.css">
+
     <!-- Font awesome -->
     <link rel="stylesheet" type="text/css"
           href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="/dashboard.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet">
+
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <a class="navbar-brand" href="#">Dashboard</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,47 +34,39 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-2">
-                <a class="nav-link" href="/notification/getNotification"><i class="fa fa-bell" aria-hidden="true"></i></a>
+                <a class="nav-link" href="#"><i class="fa fa-bell" aria-hidden="true"></i><span class="num"></span></a>
             </li>
             <li class="nav-item mx-2">
-                <a class="nav-link" href="/logout">LogOut <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                <a class="nav-link" href="#">LogOut <i class="fa fa-sign-out" aria-hidden="true"></i></a>
             </li>
         </ul>
     </div>
 </nav>
-<img src="http://societyteck.com/wp-content/uploads/2018/11/banner02.jpg" style="height: 10%">
-<div class="d-flex justify-content-center my-4">
-    <h2>Welcome <span id="username"><%= user.username %></span> from <span id="Hno"><%= user.house %></span></h2>
+<div class="jumbotron p-2 mt-3">
+    <div class="container-fluid">
+        <h1 class="display-4"><i class="fa fa-list-alt" aria-hidden="true"></i> Complaint Box</h1>
+        <p class="lead">Welcome to JWA's complaint box</p>
+        <hr class="my-4">
+        <p>Here you can file your complaint against various issues related to society's infrastructure, social
+            environment and a lot more</p>
+    </div>
 </div>
 <div class="container">
     <div class="row">
-        <a class="col-12 col-md-4 box" id="b1" style="color:white" href="/dashboard/userInfo">
-            <i class="fa fa-user-circle" id="icon" aria-hidden="true"></i>
-            <h2>User's Info</h2>
-        </a>
-        <a class="col-12 col-md-4 box" id="b2" style="color:white" href="">
-            <i class="fa fa-camera-retro" id="icon" aria-hidden="true"></i>
-            <h2>Upload photos</h2>
-        </a>
-        <a class="col-12 col-md-4 box" id="b3"   href="/dashboard/complaints">
-                <i class="fa fa-list-alt" id="icon" aria-hidden="true"></i>
-                <h2>Complaints</h2>
-        </a>
-
-    </div>
-    <div class="row">
-        <a class="col-12 col-md-4 box" id="b4" style="color:white" href="">
-            <i class="fa fa-question-circle" aria-hidden="true" id="icon"></i>
-            <h2>Suggestions</h2>
-        </a>
-        <a class="col-12 col-md-4 box" id="b5" style="color:white" href="/payWithPaytm">
-            <i class="fa fa-credit-card" aria-hidden="true" id="icon"></i>
-            <h2>User's Transactions</h2>
-        </a>
-        <a class="col-12 col-md-4 box" id="b6" style="color:white" href="">
-            <i class="fa fa-money" aria-hidden="true" id="icon"></i>
-            <h2>Society's Transactions</h2>
-        </a>
+        <div class="form">
+            <form method="POST" action="/notification/sendComplaint">
+                <div class="form-group">
+                    <label for="title"><strong>Subject</strong>(Brief description about problem)</label>
+                    <input type="text" class="form-control" id="sub" name="title">
+                </div>
+                <div class="form-group">
+                    <div><label for="body"><strong>Details</strong>(Full explanation regarding problem)</label></div>
+                    <!-- <textarea name="det" id="details" cols="146" rows="10"></textarea> -->
+                    <input type="text" class="form-control" id="details" name="body">
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
     </div>
 </div>
 <!-- <Footer -->
