@@ -80,7 +80,7 @@ app.get("/", function (req, res) {
 app.use('/notification', Notification);
 app.use('/complaint', Complaint);
 app.use('/dashboard', Dashboard);
-app.use('/pay', Payment);
+app.use('/payWithPaytm', Payment);
 
 //Registration GET Route
 app.get("/register", function (req, res) {

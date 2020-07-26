@@ -3,7 +3,7 @@ const router = express.Router();
 const AuthMiddleware = require("../middleware/isAuth");
 const {initPayment, responsePayment} = require("../paytm/services/index");
 
-router.get("/paywithpaytm", (req, res) => {
+router.get("/", (req, res) => {
     initPayment(0).then(
         success => {
             res.render("paytmRedirect.ejs", {
@@ -18,7 +18,7 @@ router.get("/paywithpaytm", (req, res) => {
 });
 
 
-router.post("/paywithpaytmresponse", (req, res) => {
+router.post("/response", (req, res) => {
     responsePayment(req.body).then(
         success => {
             res.render("response.ejs", {resultData: "true", responseData: success});
