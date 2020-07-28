@@ -20,20 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59c6d949-fc56-4bb3-b5a9-bda190dc639c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/complaints.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/notification.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/complaints.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/notification.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/icon-128x128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/icon-144x144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/icon-152x152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/icon-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/icon-384x384.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/icon-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/icon-72x72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/icon-96x96.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pwa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pwa.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/complaints.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/notification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Complaint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Feed.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Feed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Notification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/dashboard.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/HomePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/image-1595226563462" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/header.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/profile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,12 +75,13 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -96,7 +99,8 @@
       <workItem from="1595692483260" duration="8052000" />
       <workItem from="1595743048139" duration="9303000" />
       <workItem from="1595762195338" duration="3905000" />
-      <workItem from="1595795986880" duration="8055000" />
+      <workItem from="1595795986880" duration="8673000" />
+      <workItem from="1595919477327" duration="5826000" />
     </task>
     <servers />
   </component>
@@ -116,14 +120,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2500" y="330" width="589" height="404" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595921273329">
+      <screen x="1920" y="0" width="1680" height="1050" />
+    </state>
+    <state x="2500" y="330" width="589" height="404" key="#com.intellij.fileTypes.FileTypeChooser/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595921273329" />
     <state x="2532" y="275" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595800731116">
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
     <state x="2532" y="275" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595800731116" />
-    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog" timestamp="1595706194033">
+    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog" timestamp="1595919608778">
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
-    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595706194033" />
+    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595919608778" />
     <state x="2566" y="231" width="457" height="595" key="RollbackChangesDialog" timestamp="1595663158983">
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
