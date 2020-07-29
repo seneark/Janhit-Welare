@@ -11,7 +11,11 @@ router.get('/userInfo', AuthMiddleware, (req,res)=>{
     Notification.find({user_id: req.user._id}).sort({date:-1})
         .then(result => {
             console.log(result);
-            res.render("profile.ejs", {user: req.user, feed: result })
+            Notification.find({sender_id: req.user._id})
+                .then(sent => {
+                    res.render("profile.ejs", {user: req.user, feed: result, sent:sent })
+                })
+
         })
 
 })
@@ -21,6 +25,17 @@ router.get('/complaints', AuthMiddleware, (req,res) => {
             res.render("complaints.ejs",{complaints:result});
         })
 
+});
+
+// @route   GET /dashboard/societyComplaint
+router.get('/societyComplaint', AuthMiddleware, (req, res) => {
+    res.render("societyComplaint.ejs");
+});
+
+
+// @route   GET dashboard/adminComplaints
+router.get('/adminComplaints', AuthMiddleware, (req, res) => {
+    res.render("adminComplaint.ejs");
 });
 
 // @route   GET dashboard for the user

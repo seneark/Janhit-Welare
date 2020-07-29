@@ -17,7 +17,7 @@ router.get('/test', AuthMiddleware, (req, res) => {
 
 });
 
-// @route   POST notification/sendNotificationUser
+// @route   POST notification/sendComplaintAdmin
 // @desc    For sending notification and creating event for Single User
 // @Notes   send title, body, receiver to the route and add redirect url
 router.post('/sendComplaintAdmin', AuthMiddleware, (req, res) => {
@@ -112,10 +112,10 @@ router.post('/sendPayment', AuthMiddleware, (req,res) => {
                 const Amount = req.user.amount;
                 newNotification.save();
                 user.addNotification(newNotification);
-                // user.updateOne({amount: Amount+parseInt(amount)})
-                //     .then(result => {
-                //         console.log(result)
-                //     }).catch(err => console.log(err));
+                user.updateOne({amount: Amount+parseInt(amount)})
+                    .then(result => {
+                        console.log(result)
+                    }).catch(err => console.log(err));
                 User.findById(req.user._id)
                     .then(user => {
                         user.addSentNotification(newNotification);

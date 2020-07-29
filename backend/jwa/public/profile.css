@@ -1,12 +1,20 @@
+/*html {*/
+/*  position:fixed;*/
+/*  top:0;*/
+/*  bottom:0;*/
+/*  left:0;*/
+/*  right:0;*/
+/*}*/
 body {
   font-family: "Montserrat", sans-serif;
   background: linear-gradient(270deg, #00f6a7, #77f66e, #07c5f6);
-  background-size: 150% 150%;
+  background-size: cover;
   display: flex;
   justify-content: center;
   width: 100vw;
   height: 100vh;
   margin: 0;
+
 }
 
 .profile {
@@ -31,7 +39,7 @@ body {
   z-index: -1;
 }
 
-.container {
+.container-fluid {
   display: flex;
   flex-direction: row;
   align-items: stretch;
