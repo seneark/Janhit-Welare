@@ -20,17 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59c6d949-fc56-4bb3-b5a9-bda190dc639c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/expense.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/uploadPhotos.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/sendUser.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/payment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/notification.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/dashboard.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/gallery.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/gallery.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/paymentmade.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/paymentmade.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/response.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/response.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/transaction.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/transaction.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +90,7 @@
       <workItem from="1595762195338" duration="3905000" />
       <workItem from="1595795986880" duration="8673000" />
       <workItem from="1595919477327" duration="5826000" />
-      <workItem from="1595980378882" duration="25594000" />
+      <workItem from="1595980378882" duration="26958000" />
     </task>
     <servers />
   </component>
@@ -124,10 +118,10 @@
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
     <state x="2532" y="275" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595800731116" />
-    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog" timestamp="1595946709355">
+    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog" timestamp="1596022078569">
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
-    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1595946709355" />
+    <state x="2382" y="271" width="824" height="515" key="IDE.errors.dialog/79.24.1841.1056/1920.0.1680.1050@1920.0.1680.1050" timestamp="1596022078569" />
     <state x="2566" y="231" width="457" height="595" key="RollbackChangesDialog" timestamp="1595940412302">
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>

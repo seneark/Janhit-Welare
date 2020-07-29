@@ -57,12 +57,13 @@ router.post('/sendComplaintAdmin', AuthMiddleware, (req, res) => {
 // @desc   Sends Message to a User
 // Todo:   if possible add the floor functionality for better filter
 router.post('/sendMsg', AuthMiddleware, (req, res) => {
+    console.log(req.body)
     const recipient = req.body.recipient.toString().split(',')[0];
     const floor = req.body.recipient.toString().split(',')[1];
     const title = req.body.title;
     const body = req.body.body;
 
-    User.findOne({username: recipient})
+    User.findOne({phone: parseInt(recipient)})
         .then(user => {
             if (user) {
                 const newNotification = new Notification({

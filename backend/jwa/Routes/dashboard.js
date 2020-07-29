@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const AuthMiddleware = require("../middleware/isAuth");
 const Notification = require('../modules/Notification');
+const User = require("../modules/user");
 
 router.get('/', AuthMiddleware, (req, res) => {
     res.render("dashboard.ejs", {user: req.user});
@@ -49,6 +50,14 @@ router.get('/getNotification', AuthMiddleware, (req, res) => {
 
 router.get('/getSuggestion', AuthMiddleware, (req,res) => {
     res.render("Suggestions.ejs");
+})
+
+router.get('/sendUser', AuthMiddleware, (req, res) => {
+    User.find({house: req.user.house})
+        .then(user => {
+            res.render("sendUser.ejs", {user : user});
+        })
+
 })
 
 module.exports = router;
