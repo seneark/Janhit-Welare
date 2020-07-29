@@ -20,12 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59c6d949-fc56-4bb3-b5a9-bda190dc639c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/paymentNotification.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Suggestions.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/Suggestions.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/dashboard.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/profile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/gallery.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/gallery.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/uploadPhotos.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/uploadPhotos.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +90,7 @@
       <workItem from="1595762195338" duration="3905000" />
       <workItem from="1595795986880" duration="8673000" />
       <workItem from="1595919477327" duration="5826000" />
-      <workItem from="1595980378882" duration="30935000" />
+      <workItem from="1595980378882" duration="31261000" />
     </task>
     <servers />
   </component>
