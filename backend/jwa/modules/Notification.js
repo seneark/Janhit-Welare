@@ -18,6 +18,9 @@ const NotificationSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    amount: {
+        type: Number
+    },
     feed_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Feed"

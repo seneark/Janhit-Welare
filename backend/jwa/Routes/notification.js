@@ -89,6 +89,46 @@ router.post('/sendMsg', AuthMiddleware, (req, res) => {
 
 });
 
+// @route   POST notification/sendPayment
+// @desc    Send payment notification
+router.post('/sendPayment', AuthMiddleware, (req,res) => {
+    const recipient = req.body.recipient.toString().split(',')[0];
+    const amount = req.body.amount;
+    const title = req.body.title;
+    const body = req.body.body;
+
+    User.findOne({username: recipient})
+        .then(user => {
+            if (user) {
+                const newNotification = new Notification({
+                    title: title,
+                    body: body,
+                    date: new Date(),
+                    notificationType: "Payment",
+                    amount: amount,
+                    user_id: user._id,
+                    sender_id: req.user._id
+                });
+                const Amount = req.user.amount;
+                newNotification.save();
+                user.addNotification(newNotification);
+                // user.updateOne({amount: Amount+parseInt(amount)})
+                //     .then(result => {
+                //         console.log(result)
+                //     }).catch(err => console.log(err));
+                User.findById(req.user._id)
+                    .then(user => {
+                        user.addSentNotification(newNotification);
+                    }).catch(err => console.log(err));
+                console.log(user);
+                res.json({msg: "successfully added payment notification"});
+            } else {
+                res.json({msg: "No User Found"});
+            }
+
+        })
+})
+
 // @route  POST notification/sendComplaintHouse
 // @desc   Sends Complaint to a Society
 router.post('/sendComplaintHouse', AuthMiddleware, (req, res) => {
