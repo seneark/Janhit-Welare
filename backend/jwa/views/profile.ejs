@@ -75,7 +75,7 @@
                                     <h6 style="color:#2beec1"><%= Feed.notificationType %></h6>
                                     <% } %>
                                     <% if(Feed.notificationType === "Payment") { %>
-                                    <h6 style="color:#2beec1"><%= Feed.notificationType %></h6><br/>
+                                    <h6 style="color:#2beec1"><%= Feed.notificationType %> Rs. <%=Feed.amount%></h6><br/>
                                     <a href="/payWithPaytm/middle">Click here to pay</a>
                                     <% } %>
                                 </div>
@@ -102,7 +102,7 @@
                                     <h6 style="color:#2beec1"><%= Feed.notificationType %></h6>
                                     <% } %>
                                     <% if(Feed.notificationType === "Payment") { %>
-                                    <h6 style="color:#2beec1"><%= Feed.notificationType %></h6><br/>
+                                    <h6 style="color:#2beec1"><%= Feed.notificationType %> Rs. <%=Feed.amount%></h6><br/>
                                     <a href="/payWithPaytm/middle">Click here to pay</a>
                                     <% } %>
                                 </div>

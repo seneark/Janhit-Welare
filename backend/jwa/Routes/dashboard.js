@@ -12,7 +12,7 @@ router.get('/userInfo', AuthMiddleware, (req,res)=>{
     Notification.find({user_id: req.user._id}).sort({date:-1})
         .then(result => {
             console.log(result);
-            Notification.find({sender_id: req.user._id})
+            Notification.find({sender_id: req.user._id}).sort({date:-1})
                 .then(sent => {
                     res.render("profile.ejs", {user: req.user, feed: result, sent:sent })
                 })
@@ -57,7 +57,19 @@ router.get('/sendUser', AuthMiddleware, (req, res) => {
         .then(user => {
             res.render("sendUser.ejs", {user : user});
         })
+})
 
+router.get("/getPaymentNotification", AuthMiddleware, (req, res) => {
+    console.log(req.user.admin);
+    if(req.user.admin) {
+        User.find({house: req.user.house})
+            .then(user => {
+                res.render("paymentNotification.ejs", {user: user});
+            })
+    }
+    else {
+        res.status(400).json({msg: "You are not a admin"})
+    }
 })
 
 module.exports = router;

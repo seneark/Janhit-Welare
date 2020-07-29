@@ -44,7 +44,8 @@ router.post('/sendComplaintAdmin', AuthMiddleware, (req, res) => {
                     console.log(user);
 
                 });
-                res.json({msg: "success"});
+                console.log({msg: "success"});
+                res.redirect('/dashboard');
             } else {
                 res.json({msg: "No Admin Found"})
             }
@@ -81,24 +82,24 @@ router.post('/sendMsg', AuthMiddleware, (req, res) => {
                         user.addSentNotification(newNotification);
                     }).catch(err => console.log(err));
                 console.log(user);
-                res.json({msg: "success"});
+                console.log({msg: "success"});
+                res.redirect('/dashboard');
             } else {
                 res.json({msg: "No User Found"});
             }
-
-        })
+        }).catch(err => console.log(err));
 
 });
 
 // @route   POST notification/sendPayment
 // @desc    Send payment notification
 router.post('/sendPayment', AuthMiddleware, (req,res) => {
-    const recipient = req.body.recipient.toString().split(',')[0];
-    const amount = req.body.amount;
+    const recipient = parseInt(req.body.recipient.toString().split(',')[0]);
+    const amount = parseInt(req.body.amount);
     const title = req.body.title;
     const body = req.body.body;
 
-    User.findOne({username: recipient})
+    User.findOne({phone: recipient})
         .then(user => {
             if (user) {
                 const newNotification = new Notification({
@@ -122,11 +123,11 @@ router.post('/sendPayment', AuthMiddleware, (req,res) => {
                         user.addSentNotification(newNotification);
                     }).catch(err => console.log(err));
                 console.log(user);
-                res.json({msg: "successfully added payment notification"});
+                console.log({msg: "successfully added payment notification"});
+                res.redirect('/dashboard');
             } else {
                 res.json({msg: "No User Found"});
             }
-
         })
 })
 
@@ -144,8 +145,8 @@ router.post('/sendComplaintHouse', AuthMiddleware, (req, res) => {
         sender_id: req.user._id
     });
     newNotification.save();
-    res.json({message: "success"})
-
+    console.log({message: "success"});
+    res.redirect('/dashboard');
 });
 
 
@@ -163,7 +164,8 @@ router.post('/sendSuggestion', AuthMiddleware, (req, res) => {
         sender_id: req.user._id
     });
     newNotification.save();
-    res.json({message: "success"})
+    console.log({message: "success"});
+    res.redirect('/dashboard');
 
 });
 
