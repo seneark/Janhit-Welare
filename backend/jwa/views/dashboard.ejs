@@ -46,7 +46,7 @@
             <i class="fa fa-user-circle" id="icon" aria-hidden="true"></i>
             <h2>User's Info</h2>
         </a>
-        <a class="col-12 col-md-4 box" id="b2" style="color:white" href="">
+        <a class="col-12 col-md-4 box" id="b2" style="color:white" href="/gallery">
             <i class="fa fa-camera-retro" id="icon" aria-hidden="true"></i>
             <h2>Upload photos</h2>
         </a>
@@ -65,11 +65,21 @@
             <i class="fa fa-credit-card" aria-hidden="true" id="icon"></i>
             <h2>User's Transactions</h2>
         </a>
-        <a class="col-12 col-md-4 box" id="b6" style="color:white" href="">
+        <a class="col-12 col-md-4 box" id="b6" style="color:white" href="/societytransaction">
             <i class="fa fa-money" aria-hidden="true" id="icon"></i>
             <h2>Society's Transactions</h2>
         </a>
     </div>
+	<% if(currentUser.admin){ %>
+		<div class="row">
+			<div class="col-12 col-md-6">
+				<a href="#" class="btn btn-lg btn-success btn-block mt-4"><i class="fa fa-commenting-o" aria-hidden="true"></i> Send Notifications</a>
+			</div>
+			<div class="col-12 col-md-6">
+				<a href="/payWithPaytm/expense" class="btn btn-lg btn-danger btn-block mt-4"><i class="fa fa-cc-visa" aria-hidden="true"></i> Make Payment</a>
+			</div>
+		</div>
+	<% } %>
 </div>
 <!-- <Footer -->
 <footer class="page-footer font-small mt-4 pt-4" id="footer">

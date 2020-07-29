@@ -27,14 +27,9 @@
 				<tbody>
 					<% payments.forEach(function(item){ %>
 						<tr>
-						<td><%= item.date.getDate() %>- <%= item.date.getMonth() %> - <%= item.date.getFullYear() %> </td>
-						<% if(item.society_in){ %>
+						<td><%= item.date.getDate() %>/<%= item.date.getMonth() %>/<%= item.date.getFullYear() %> </td>
 							<td><%= item.receiver %> (<%= item.receiver_num %>)</td>
 							<td><%= item.sender %> (<%= item.sender_num %>)</td>
-						<% } else{ %>
-							<td><%= item.sender %> (<%= item.sender_num %>)</td>
-							<td><%= item.receiver %> (<%= item.receiver_num %>)</td>
-						<% } %>
 						<td><%= item.amount %></td>
 						<td><%= item.details %></td>
 						<td><%= item.mode %></td>
@@ -44,6 +39,7 @@
 			</table>
 		</div>
 		<h3>The Balance Left = <%= total %></h3>
+		<a href="/dashboard" btn btn-success>Go Back</a>
 	</div>
 
 </body>

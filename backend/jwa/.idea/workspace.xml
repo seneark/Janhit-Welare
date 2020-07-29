@@ -20,13 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59c6d949-fc56-4bb3-b5a9-bda190dc639c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/Suggestions.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/Suggestions.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/Transaction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/paymentmade.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/transaction.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Routes/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Routes/notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paytm/services/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/paytm/services/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/complaints.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/complaints.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/dashboard.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/profile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +66,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -71,9 +78,9 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/views" />
       <recent name="$PROJECT_DIR$/modules" />
+      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -93,7 +100,7 @@
       <workItem from="1595762195338" duration="3905000" />
       <workItem from="1595795986880" duration="8673000" />
       <workItem from="1595919477327" duration="5826000" />
-      <workItem from="1595980378882" duration="13962000" />
+      <workItem from="1595980378882" duration="3558000" />
     </task>
     <servers />
   </component>

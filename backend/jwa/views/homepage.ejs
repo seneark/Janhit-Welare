@@ -34,20 +34,6 @@
 
 </div>
 
-<div class="row text-center" style="display:flex; flex-wrap:wrap;">
-    <% images.forEach(function(image){ %>
-        <div class="col-md-3 col-sm-3 ">
-            <div class="thumbnail">
-                <img src="data:image/<%= image.img.contentType %>;base64,
-                     <%= image.img.data.toString('base64') %>" class="d-block w-100">
-                <div class="caption">
-                    <h2> <%= image.author %> </h2>
-                </div>
-            </div>
-        </div>
-
-    <% }); %>
-</div>
 
 <%- include("partials/footer") %>
 

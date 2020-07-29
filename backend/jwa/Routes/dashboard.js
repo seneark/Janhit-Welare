@@ -32,8 +32,4 @@ router.get('/getNotification', AuthMiddleware, (req, res) => {
         })
 });
 
-router.get('/getSuggestion', AuthMiddleware, (req,res) => {
-    res.render("Suggestions.ejs");
-})
-
 module.exports = router;
