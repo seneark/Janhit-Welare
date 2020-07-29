@@ -76,6 +76,7 @@ router.post("/response", (req, res) => {
         success => {
             var responseData = success;
             if(option){
+                console.log(req.user);
                 User.findById(req.user._id)
                     .then(user => {
                         const Amount = req.user.amount;
@@ -96,8 +97,8 @@ router.post("/response", (req, res) => {
                 amount: amount,
                 receiver: "Society/Admin",
                 sender: req.user.username,
-                receiver_num: req.user.phone,
-                sender_num: 777677776,
+                receiver_num: 777677776,
+                sender_num: req.user.phone,
                 details: desc,
                 mode: "Online",
                 society_in: true,

@@ -154,9 +154,20 @@ app.get("/logout", function (req, res) {
     res.redirect("/");
 });
 
-//Upload images GET Route
-app.get("/upload", isLoggedIn, function (req, res) {
-    res.render("gallery.ejs");
+//Upload Photo GET Route
+app.get("/upload", (req,res)=>{
+    res.render("uploadPhotos.ejs");
+})
+
+//Images Gallery GET Route
+app.get("/gallery", isLoggedIn, function (req, res) {
+    Gallery.find({}, function (err, images) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("gallery.ejs", {images: images});
+        }
+    });
 });
 
 //Upload images POST Route
@@ -182,7 +193,7 @@ app.post("/upload", upload.single("image"), function (req, res, next) {
 //Import Transactions in this route too
 app.get("/usertransaction",isLoggedIn, (req,res)=>{
     console.log(req.user.phone);
-    Transactions.find({receiver_num:req.user.phone})
+    Transactions.find({sender_num:req.user.phone})
         .then(results => {
             let total = 0;
             results.forEach(function(result)  {

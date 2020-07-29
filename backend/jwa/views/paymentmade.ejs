@@ -11,40 +11,36 @@
 	</style>
 </head>
 <body>
-	<div class="container">
-		<div class="table-responsive">
-			<table class="table table-bordered">
-				<thead class="table-dark">
-					<tr>
-						<th scope="col">Date</th>
-						<th scope="col">Received by</th>
-						<th scope="col">Sent by</th>
-						<th scope="col">Amount</th>
-						<th scope="col">Description</th>
-						<th scope="col">Mode of payment</th>
-					</tr>
-				</thead>
-				<tbody>
-					<% payments.forEach(function(item){ %>
-						<tr>
-						<td><%= item.date.getDate() %>- <%= item.date.getMonth() %> - <%= item.date.getFullYear() %> </td>
-						<% if(item.society_in){ %>
-							<td><%= item.receiver %> (<%= item.receiver_num %>)</td>
-							<td><%= item.sender %> (<%= item.sender_num %>)</td>
-						<% } else{ %>
-							<td><%= item.sender %> (<%= item.sender_num %>)</td>
-							<td><%= item.receiver %> (<%= item.receiver_num %>)</td>
-						<% } %>
-						<td><%= item.amount %></td>
-						<td><%= item.details %></td>
-						<td><%= item.mode %></td>
-						</tr>
-					<%}) %>
-				</tbody>
-			</table>
-		</div>
-		<h3>The Balance Left = <%= total %></h3>
+<div class="container">
+	<div class="table-responsive">
+		<table class="table table-bordered">
+			<thead class="table-dark">
+			<tr>
+				<th scope="col">Date</th>
+				<th scope="col">Received by</th>
+				<th scope="col">Sent by</th>
+				<th scope="col">Amount</th>
+				<th scope="col">Description</th>
+				<th scope="col">Mode of payment</th>
+			</tr>
+			</thead>
+			<tbody>
+			<% payments.forEach(function(item){ %>
+				<tr>
+					<td><%= item.date.getDate() %>/<%= item.date.getMonth() %>/<%= item.date.getFullYear() %> </td>
+					<td><%= item.receiver %> (<%= item.receiver_num %>)</td>
+					<td><%= item.sender %> (<%= item.sender_num %>)</td>
+					<td><%= item.amount %></td>
+					<td><%= item.details %></td>
+					<td><%= item.mode %></td>
+				</tr>
+			<%}) %>
+			</tbody>
+		</table>
 	</div>
+	<h3>The Balance Left = <%= total %></h3>
+	<a href="/dashboard" btn btn-success>Go Back</a>
+</div>
 
 </body>
 </html>
