@@ -14,6 +14,7 @@ var Gallery = require("./modules/gallery.js");
 const Notification = require("./Routes/notification");
 const Dashboard = require('./Routes/dashboard');
 const Payment = require('./Routes/payment');
+const Transactions = require('./modules/Transaction');
 
 
 //Database setup
@@ -174,6 +175,54 @@ app.post("/upload", upload.single("image"), function (req, res, next) {
             //console.log(item);
             res.redirect("/");
         }
+    });
+});
+
+
+//Import Transactions in this route too
+app.get("/usertransaction",isLoggedIn, (req,res)=>{
+    console.log(req.user.phone);
+    Transactions.find({receiver_num:req.user.phone})
+        .then(results => {
+            let total = 0;
+            results.forEach(function(result)  {
+                if(result.society_in){
+                    total-=parseInt(result.amount);
+                }
+                else{
+                    total+=parseInt(result.amount);
+                }
+            });
+            res.render("paymentmade.ejs", {payments: results, total:total})
+        })
+    // Transactions.findOne({receiver_num:req.user.phone}, (err,payments)=>{
+    //     if(err){
+    //         console.log(err);
+    //     }
+    //     else{
+    //         var total=0;
+    //         console.log(payments);
+    //
+    //         res.render("paymentmade.ejs", {payments: payments, total:total});
+    //     }
+    //
+    // });
+});
+
+app.get("/societytransaction",isLoggedIn,(req,res)=>{
+    Transactions.find({}, (err,payments)=>{
+
+        var total=0;
+        payments.forEach(function(item){
+            if(item.society_in){
+                total+=parseInt(item.amount);
+            }
+            else{
+                total-=parseInt(item.amount);
+            }
+        });
+
+        res.render("paymentmade.ejs", {payments: payments, total:total});
     });
 });
 

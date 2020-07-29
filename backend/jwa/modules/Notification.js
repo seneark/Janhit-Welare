@@ -14,8 +14,8 @@ const NotificationSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-    isComplaint: {
-        type: Boolean,
+    notificationType: {
+        type: String,
         required: true
     },
     feed_id: {
@@ -24,7 +24,14 @@ const NotificationSchema = new mongoose.Schema({
     },
     house_no: {
         type: String,
-        required: true
+    },
+    user_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    },
+    sender_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     }
 
 });

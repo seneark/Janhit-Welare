@@ -9,133 +9,127 @@ const Feed = require('../modules/Feed');
 // @desc    For testing the route
 // @Notes   to be removed later
 router.get('/test', AuthMiddleware, (req, res) => {
-    res.status(200).json({msg: "Working", user: req.user.toString()})
+    User.findById(req.user._id)
+        .populate(['userNotification', 'sentNotification'])
+        .then(user=> {
+            res.status(200).json({msg: "Working", user: user})
+        })
+
 });
 
-// // @route   POST notification/sendNotificationUser
-// // @desc    For sending notification and creating event for Single User
-// // @Notes   send title, body, receiver to the route and add redirect url
-// router.post('/sendNotificationUser', AuthMiddleware, (req, res) => {
-//     const title = req.body.title;
-//     const body = req.body.body;
-//     const receiver = req.body.receiver;
-//     User.findOne({username: receiver})
-//         .then(user => {
-//             if (user) {
-//                 let ID = user._id;
-//                 const newFeed = new Feed({
-//                     title:title,
-//                     body: body,
-//                     date : new Date(),
-//                     admin_id: req.user._id,
-//                     user_id: ID
-//                 });
-//                 newFeed.save();
-//                 const newNotification = new Notification({
-//                     title: title,
-//                     body: body,
-//                     date: new Date(),
-//                     feed_id: newFeed._id,
-//                     admin_id: req.user._id,
-//                     user_id: ID
-//                 });
-//                 newNotification.save();
-//                 User.findById(ID)
-//                     .then(user => {
-//                         user.addNotification(newNotification);
-//                     })
-//                     .catch(err => console.log(err));
-//                 res.status(200).json({msg: "success"})
-//             }
-//         })
-//         .catch(err => console.log(err));
-// });
-
-// @route   POST notification/sendNotificationHouse
-// @desc    For Sending post route to house
-// @Notes   send title, body, house and add redirect url
-router.post('/sendFeed', AuthMiddleware, (req, res) => {
+// @route   POST notification/sendNotificationUser
+// @desc    For sending notification and creating event for Single User
+// @Notes   send title, body, receiver to the route and add redirect url
+router.post('/sendComplaintAdmin', AuthMiddleware, (req, res) => {
     const title = req.body.title;
     const body = req.body.body;
-    const house = req.user.house;
-    let newFeed;
-    newFeed = new Feed({
-        title: title,
-        body: body,
-        date: new Date(),
-        isComplaint: false,
-        house_no: req.user.house
-    });
-    newFeed.save();
+    User.find({house: req.user.house, admin: true})
+        .then(users => {
+            if (users) {
+                users.forEach(user => {
+                    const newNotification = new Notification({
+                        title: title,
+                        body: body,
+                        date: new Date(),
+                        notificationType: "Complaint",
+                        user_id: user._id,
+                        sender_id: req.user._id
+                    });
+                    newNotification.save();
+                    user.addNotification(newNotification);
+                    User.findById(req.user._id)
+                        .then(user => {
+                            user.addSentNotification(newNotification);
+                        }).catch(err => console.log(err));
+                    console.log(user);
+
+                });
+                res.json({msg: "success"});
+            } else {
+                res.json({msg: "No Admin Found"})
+            }
+        })
+        .catch(err => console.log(err))
+
+});
+
+// @route  POST notification/sendMsg
+// @desc   Sends Message to a User
+// Todo:   if possible add the floor functionality for better filter
+router.post('/sendMsg', AuthMiddleware, (req, res) => {
+    const recipient = req.body.recipient.toString().split(',')[0];
+    const floor = req.body.recipient.toString().split(',')[1];
+    const title = req.body.title;
+    const body = req.body.body;
+
+    User.findOne({username: recipient})
+        .then(user => {
+            if (user) {
+                const newNotification = new Notification({
+                    title: title,
+                    body: body,
+                    date: new Date(),
+                    notificationType: "Message",
+                    user_id: user._id,
+                    sender_id: req.user._id
+                });
+                newNotification.save();
+                user.addNotification(newNotification);
+                User.findById(req.user._id)
+                    .then(user => {
+                        user.addSentNotification(newNotification);
+                    }).catch(err => console.log(err));
+                console.log(user);
+                res.json({msg: "success"});
+            } else {
+                res.json({msg: "No User Found"});
+            }
+
+        })
+
+});
+
+// @route  POST notification/sendComplaintHouse
+// @desc   Sends Complaint to a Society
+router.post('/sendComplaintHouse', AuthMiddleware, (req, res) => {
+    const title = req.body.title;
+    const body = req.body.body;
     const newNotification = new Notification({
         title: title,
         body: body,
         date: new Date(),
-        isComplaint: false,
-        feed_id: newFeed._id,
-        house_no: req.user.house
+        notificationType: "Complaint",
+        house_no: req.user.house,
+        sender_id: req.user._id
     });
     newNotification.save();
-    User.find({house:house})
-        .then(user => {
-            if(user){
-                for (let i = 0; i < user.length; i++) {
-                    User.findById(user[i]._id)
-                        .then(user => {
-                            user.addNotification(newNotification);
-                        })
-                        .catch(err => console.log(err));
-                }
-            }
-        })
-    res.json({message: "success", Feed: newFeed})
+    res.json({message: "success"})
 
 });
 
-router.post('/sendComplaint', AuthMiddleware, (req, res) => {
+
+// @route  POST notification/sendSuggestion
+// @desc   Sends Suggestions to a Society
+router.post('/sendSuggestion', AuthMiddleware, (req, res) => {
     const title = req.body.title;
     const body = req.body.body;
-    const house = req.user.house;
-    console.log(res.body);
-    let newFeed;
-    newFeed = new Feed({
-        title: title,
-        body: body,
-        date: new Date(),
-        isComplaint: true,
-        house_no: req.user.house
-    });
-    newFeed.save();
     const newNotification = new Notification({
         title: title,
         body: body,
         date: new Date(),
-        isComplaint: true,
-        feed_id: newFeed._id,
-        house_no: req.user.house
+        notificationType: "Suggestion",
+        house_no: req.user.house,
+        sender_id: req.user._id
     });
     newNotification.save();
-    User.find({house:house})
-        .then(user => {
-            if(user){
-                for (let i = 0; i < user.length; i++) {
-                    User.findById(user[i]._id)
-                        .then(user => {
-                            user.addNotification(newNotification);
-                        })
-                        .catch(err => console.log(err));
-                }
-            }
-        })
+    res.json({message: "success"})
 
-    res.json({message: "success", Feed: newFeed})
-
-})
+});
 
 // @route   GET notification/getNotification
 // @desc    Gets all the notification for the user
 router.get('/getNotification', AuthMiddleware, (req, res) => {
-    Notification.find({house_no: req.user.house}, ['title', 'body', 'isComplaint']).sort({date:-1})
+    Notification.find({house_no: req.user.house}, ['title', 'body', 'isComplaint']).sort({date: -1})
         .then(notification => {
             res.render("notification.ejs", {notification: notification})
             // res.json({notification: notification});
@@ -161,11 +155,12 @@ router.get('/deleteNotification', AuthMiddleware, (req, res) => {
 // @route   GET notification/getFeed
 // @desc    Get all the feeds of a user
 router.get('/getFeed', AuthMiddleware, (req, res) => {
-    Feed.find({house_no : req.user.house}).sort({date:-1})
+    Feed.find({house_no: req.user.house}).sort({date: -1})
         .then(feed => {
             res.json({feed: feed});
         })
-})
+});
+
 
 module.exports = router;
 

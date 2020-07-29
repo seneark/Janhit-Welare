@@ -20,6 +20,16 @@ var UserSchema = new mongoose.Schema({
 				}
 			}
 		]
+	},
+	sentNotification: {
+		items: [
+			{
+				itemId: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Notification'
+				}
+			}
+		]
 	}
 });
 UserSchema.methods.addNotification = function(notification){
@@ -29,6 +39,17 @@ UserSchema.methods.addNotification = function(notification){
 	});
 	this.userNotification = {
 		items: updatedNotification
+	};
+	return this.save();
+
+}
+UserSchema.methods.addSentNotification = function(notification){
+	const updatedsentNotification = [...this.sentNotification.items];
+	updatedsentNotification.push({
+		itemId: notification._id
+	});
+	this.sentNotification = {
+		items: updatedsentNotification
 	};
 	return this.save();
 

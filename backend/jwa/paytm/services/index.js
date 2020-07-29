@@ -9,7 +9,7 @@ const initPayment = function(amount) {
       CUST_ID: shortid.generate(),
       INDUSTRY_TYPE_ID: config.INDUSTRY_TYPE_ID,
       CHANNEL_ID: config.CHANNEL_ID,
-      TXN_AMOUNT: '1',
+      TXN_AMOUNT: amount.toString(),
       MID: config.MID,
       WEBSITE: config.WEBSITE,
       CALLBACK_URL: config.CALLBACK_URL,
