@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const AuthMiddleware = require("../middleware/isAuth");
 const {initPayment, responsePayment} = require("../paytm/services/index");
 const Transaction = require('../modules/Transaction');
 const User = require("../modules/user");
+const AuthMiddleware = require("../middleware/isAuth");
 
 router.get("/expense", (req,res)=>{
     if(req.user.admin){
@@ -71,7 +71,7 @@ router.get("/", (req, res) => {
 });
 
 
-router.post("/response", (req, res) => {
+router.post("/response", AuthMiddleware, (req, res) => {
     responsePayment(req.body).then(
         success => {
             var responseData = success;
