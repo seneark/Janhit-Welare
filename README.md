@@ -2,7 +2,10 @@
 *For the Welfare of Society*\
 ![Society Photo](/assets/1.jpg)
 
-# Installation Prerequisites
+## Table of Contents
+- [Installation Prerequisites](installation-prerequisites)
+
+## Installation Prerequisites
 - Nodejs
 
 >To Download Nodejs Package [Go to the Nodejs Download Website](https://nodejs.org/en/download/).
@@ -11,7 +14,7 @@
 
 > To install Mongodb [Go to this Website](https://docs.mongodb.com/manual/administration/install-community/)
 
-# How to Run this Website
+## How to Run this Website
 1. Clone this Repo to your Local Machine.
 2. Open The Terminal/CMD in the folder Janhit-Welfare.
 3. Type ```mongod``` in your Terminal to Run mongodb Server (Ignore if already Running).
