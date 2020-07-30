@@ -9,12 +9,12 @@ body {
   font-family: "Montserrat", sans-serif;
   background: linear-gradient(270deg, #00f6a7, #77f66e, #07c5f6);
   background-size: cover;
-  display: flex;
-  justify-content: center;
+  /*margin:auto;*/
   width: 100vw;
   height: 100vh;
   margin: 0;
-
+  display: flex;
+  justify-content: center;
 }
 
 .profile {
