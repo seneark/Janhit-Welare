@@ -11,7 +11,7 @@ const Feed = require('../modules/Feed');
 router.get('/test', AuthMiddleware, (req, res) => {
     User.findById(req.user._id)
         .populate(['userNotification', 'sentNotification'])
-        .then(user=> {
+        .then(user => {
             res.status(200).json({msg: "Working", user: user})
         })
 
@@ -93,7 +93,7 @@ router.post('/sendMsg', AuthMiddleware, (req, res) => {
 
 // @route   POST notification/sendPayment
 // @desc    Send payment notification
-router.post('/sendPayment', AuthMiddleware, (req,res) => {
+router.post('/sendPayment', AuthMiddleware, (req, res) => {
     const recipient = parseInt(req.body.recipient.toString().split(',')[0]);
     const amount = parseInt(req.body.amount);
     const title = req.body.title;
@@ -114,7 +114,7 @@ router.post('/sendPayment', AuthMiddleware, (req,res) => {
                 const Amount = req.user.amount;
                 newNotification.save();
                 user.addNotification(newNotification);
-                user.updateOne({amount: Amount+parseInt(amount)})
+                user.updateOne({amount: Amount + parseInt(amount)})
                     .then(result => {
                         console.log(result)
                     }).catch(err => console.log(err));
@@ -142,7 +142,8 @@ router.post('/sendComplaintHouse', AuthMiddleware, (req, res) => {
         date: new Date(),
         notificationType: "Complaint",
         house_no: req.user.house,
-        sender_id: req.user._id
+        sender_id: req.user._id,
+        votes: 0
     });
     newNotification.save();
     console.log({message: "success"});
@@ -161,22 +162,13 @@ router.post('/sendSuggestion', AuthMiddleware, (req, res) => {
         date: new Date(),
         notificationType: "Suggestion",
         house_no: req.user.house,
-        sender_id: req.user._id
+        sender_id: req.user._id,
+        votes: 0
     });
     newNotification.save();
     console.log({message: "success"});
     res.redirect('/dashboard');
 
-});
-
-// @route   GET notification/getNotification
-// @desc    Gets all the notification for the user
-router.get('/getNotification', AuthMiddleware, (req, res) => {
-    Notification.find({house_no: req.user.house}, ['title', 'body', 'isComplaint']).sort({date: -1})
-        .then(notification => {
-            res.render("notification.ejs", {notification: notification})
-            // res.json({notification: notification});
-        })
 });
 
 // @route   GET notification/deleteNotification
@@ -202,6 +194,67 @@ router.get('/getFeed', AuthMiddleware, (req, res) => {
         .then(feed => {
             res.json({feed: feed});
         })
+});
+
+/// @route   GET notification/upVote
+// @desc     Increases the votes of a notification
+router.get("/upVote", AuthMiddleware, (req, res) => {
+    const id = req.query.id;
+    Notification.findById(id)
+        .then(notification => {
+            if (notification.votes_id.items.some(Votes => Votes.itemId.toString() === req.user._id.toString())) {
+                console.log("deleted");
+                const votes = notification.votes;
+                if (votes > 0) {
+                    notification.removeVotes(req.user._id);
+                    notification.updateOne({votes: votes - 1})
+                        .then(result => {
+                            console.log(result);
+                            res.redirect('/dashboard/getNotification');
+                        }).catch(err => console.log(err));
+                }
+            } else {
+                notification.addVotes(req.user._id);
+                const votes = notification.votes;
+                notification.updateOne({votes: votes + 1})
+                    .then(result => {
+                        console.log(result);
+                        res.redirect('/dashboard/getNotification');
+                    }).catch(err => console.log(err));
+            }
+        }).catch(err => console.log(err));
+});
+
+
+// @route   GET notification/downVote
+// @desc    Get all the feeds of a user
+router.get("/downVote", AuthMiddleware, (req, res) => {
+    const id = req.query.id;
+    console.log(id);
+    Notification.findById(id)
+        .then(notification => {
+            if (notification.votes_id.items.some(Votes => Votes.itemId.toString() === req.user._id.toString())) {
+                notification.removeVotes(req.user._id);
+                console.log("deleted");
+                const votes = notification.votes;
+                notification.updateOne({votes: votes - 1})
+                    .then(result => {
+                        console.log(result);
+                        res.redirect('/dashboard/getNotification');
+                    }).catch(err => console.log(err));
+            } else {
+                console.log("came here");
+                const votes = notification.votes;
+                if (votes > 0) {
+                    notification.addVotes(req.user._id);
+                    notification.updateOne({votes: votes + 1})
+                        .then(result => {
+                            console.log(result);
+                            res.redirect('/dashboard/getNotification');
+                        }).catch(err => console.log(err));
+                }
+            }
+        }).catch(err => console.log(err));
 });
 
 

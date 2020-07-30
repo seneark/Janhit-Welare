@@ -14,8 +14,8 @@
     <link rel="stylesheet" type="text/css" href="/notification.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-    <a class="navbar-brand" href="#">Dashboard</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+    <a class="navbar-brand" href="/dashboard">Dashboard</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,46 +23,69 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item mx-2">
-                <a class="nav-link" href="#">Events</a>
+                <a class="nav-link" href="/dashboard/sendUser">Send Notification to a User</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-2">
-                <a class="nav-link" id="active" href="#"><i class="fa fa-bell" aria-hidden="true"></i><span
-                            class="num"></span></a>
+                <a class="nav-link" href="/dashboard/getNotification"><i class="fa fa-bell" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item mx-2">
-                <a class="nav-link" href="#">LogOut <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                <a class="nav-link" href="/logout">LogOut <i class="fa fa-sign-out" aria-hidden="true"></i></a>
             </li>
         </ul>
     </div>
 </nav>
+<br/>
 <div class="jumbotron p-4 mt-3">
     <h1><i class="fa fa-home" id="icon" aria-hidden="true"></i> JWA</h1>
     <h1>The Janhit Welfare Association</h1>
 </div>
 <div class="content">
     <h1 class="header" align="center">Notifications</h1>
-    <marquee behavior="scroll" direction="up" scrollamount="2"
-             onmouseover="this.setAttribute('scrollamount', 0, 0); this.stop();"
-             onmouseout="this.setAttribute('scrollamount', 2, 0); this.start();"
-             class="moving-body">
-        <% notification.forEach(function(noti) { %>
-        <div class="movong-para">
-            <% if (noti.isComplaint) { %>
-                <p style="color:#ff0000"><span style="font-weight: bold">Title:</span>&nbsp;&nbsp;&nbsp; <%= noti.title %></p>
-                <p style="color:#ff0000"><span style="font-weight: bold">Body:</span>&nbsp;&nbsp;&nbsp;<%= noti.body %></p>
+    <!--    <marquee behavior="scroll" direction="up" scrollamount="2"-->
+    <!--             onmouseover="this.setAttribute('scrollamount', 0, 0); this.stop();"-->
+    <!--             onmouseout="this.setAttribute('scrollamount', 2, 0); this.start();"-->
+    <!--             class="moving-body">-->
+    <% notification.forEach(function(noti) { %>
+        <div style="display: flex; justify-content: center">
+            <% if (noti.notificationType === 'Complaint') { %>
+                <div class="card" style="width: 40rem;margin-bottom: 10px">
+                    <div class="card-body">
+                        <div style="display: flex; flex-direction: row; justify-content: space-between">
+                            <h5 class="card-title"><span
+                                        style="font-weight: bold">Title:</span>&nbsp;&nbsp;&nbsp; <%= noti.title %></h5>
+                            <h5 class="card-title" style="color: #ee2b49"><%= noti.notificationType %></h5>
+                        </div>
+                        <h6 class="card-subtitle mb-2 text-muted">Votes: <%= noti.votes %></h6>
+                        <p class="card-text"><%= noti.body %></p>
+                        <a href="/notification/upVote?id=<%= noti._id %>"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;&nbsp;LIKE</a>
+                    </div>
+                </div>
             <% } else { %>
-                <p style="color:#00f6a7"><span style="font-weight: bold">Title:</span>&nbsp;&nbsp;&nbsp; <%= noti.title %></p>
-                <p style="color:#00f6a7"><span style="font-weight: bold">Body:</span>&nbsp;&nbsp;&nbsp;<%= noti.body %></p>
+                <div class="card" style="width: 40rem;margin-bottom: 10px">
+                    <div class="card-body">
+                        <div style="display: flex; flex-direction: row; justify-content: space-between">
+                            <h5 class="card-title"><span
+                                        style="font-weight: bold">Title:</span>&nbsp;&nbsp;&nbsp; <%= noti.title %></h5>
+                            <h5 class="card-title" style="color: #07c5f6"><%= noti.notificationType %></h5>
+                        </div>
+                        <h6 class="card-subtitle mb-2 text-muted">Votes: <%= noti.votes %></h6>
+                        <p class="card-text"><%= noti.body %></p>
+                        <div style="display:flex;justify-content: space-evenly">
+                            <a href="/notification/upVote?id=<%= noti._id %>"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;&nbsp;LIKE</a>
+                        </div>
+                    </div>
+                </div>
+
             <% } %>
         </div>
-        <% }); %>
-        <!--        <p class="movong-para">Delhi Technological University, formerly known as the Delhi College of Engineering is a public university located in New Delhi, India</p>-->
-        <!--        <p class="movong-para">Delhi Technological University, formerly known as the Delhi College of Engineering is a public university located in New Delhi, India</p>-->
-        <!--        <p class="movong-para">Delhi Technological University, formerly known as the Delhi College of Engineering is a public university located in New Delhi, India</p>-->
-        <!--        <p class="movong-para">Delhi Technological University, formerly known as the Delhi College of Engineering is a public university located in New Delhi, India</p>-->
-    </marquee>
+    <% }); %>
+    <!--        <p class="movong-para">Delhi Technological University, formerly known as the Delhi College of Engineering is a public university located in New Delhi, India</p>-->
+    <!--        <p class="movong-para">Delhi Technological University, formerly known as the Delhi College of Engineering is a public university located in New Delhi, India</p>-->
+    <!--        <p class="movong-para">Delhi Technological University, formerly known as the Delhi College of Engineering is a public university located in New Delhi, India</p>-->
+    <!--        <p class="movong-para">Delhi Technological University, formerly known as the Delhi College of Engineering is a public university located in New Delhi, India</p>-->
+    <!--    </marquee>-->
 </div>
 <!-- <Footer -->
 <footer class="page-footer font-small mt-4 pt-4" id="footer">
@@ -83,6 +106,7 @@
                 <h5>227, Platinum Techno Park, Sector 69B, vashi, Navi Mumbai - 400703.</h5>
             </div>
         </div>
+    </div>
 </footer>
 <!-- Footer -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

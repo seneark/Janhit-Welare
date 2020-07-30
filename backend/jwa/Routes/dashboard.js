@@ -41,7 +41,7 @@ router.get('/adminComplaints', AuthMiddleware, (req, res) => {
 
 // @route   GET dashboard for the user
 router.get('/getNotification', AuthMiddleware, (req, res) => {
-    Notification.find({house_no: req.user.house}, ['title', 'body', 'isComplaint']).sort({date: -1})
+    Notification.find({house_no: req.user.house}).sort({date: -1})
         .then(notification => {
             res.render("notification.ejs", {notification: notification})
             // res.json({notification: notification});

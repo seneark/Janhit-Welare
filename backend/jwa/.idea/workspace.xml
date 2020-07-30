@@ -21,10 +21,15 @@
   <component name="ChangeListManager">
     <list default="true" id="59c6d949-fc56-4bb3-b5a9-bda190dc639c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/notification.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/notification.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/Suggestions.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/Suggestions.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/dashboard.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/gallery.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/gallery.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/uploadPhotos.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/uploadPhotos.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/adminComplaint.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/adminComplaint.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/notification.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/notification.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/societyComplaint.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/societyComplaint.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,14 +68,14 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/views" />
       <recent name="$PROJECT_DIR$/modules" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -90,7 +95,10 @@
       <workItem from="1595762195338" duration="3905000" />
       <workItem from="1595795986880" duration="8673000" />
       <workItem from="1595919477327" duration="5826000" />
-      <workItem from="1595980378882" duration="31261000" />
+      <workItem from="1595980378882" duration="31712000" />
+      <workItem from="1596034343770" duration="4461000" />
+      <workItem from="1596072095924" duration="694000" />
+      <workItem from="1596073956328" duration="8057000" />
     </task>
     <servers />
   </component>
