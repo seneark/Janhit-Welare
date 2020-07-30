@@ -95,7 +95,7 @@ app.post("/register", function (req, res) {
         floor: req.body.floor,
         admin: false,
         notification: false,
-        amount: 500,
+        amount: 0,
         paid: 0,
     });
     User.register(newUser, req.body.password, function (err, user) {
@@ -108,7 +108,7 @@ app.post("/register", function (req, res) {
         //console.log(req.user);
         passport.authenticate("local")(req, res, function () {
             //alert("Successful Registration");
-            res.redirect("/");
+            res.redirect("/dashboard");
         });
     });
 });
@@ -170,6 +170,10 @@ app.get("/gallery", isLoggedIn, function (req, res) {
     });
 });
 
+app.get("/aboutus", (req,res)=>{
+    res.render("aboutus.ejs");
+})
+
 //Upload images POST Route
 app.post("/upload", upload.single("image"), function (req, res, next) {
     var obj = {
@@ -184,7 +188,7 @@ app.post("/upload", upload.single("image"), function (req, res, next) {
             console.log(err);
         } else {
             //console.log(item);
-            res.redirect("/");
+            res.redirect("/gallery");
         }
     });
 });

@@ -128,7 +128,6 @@
                                     <% } %>
                                     <% if(Feed.notificationType === "Payment") { %>
                                     <h6 style="color:#2beec1"><%= Feed.notificationType %> Rs. <%=Feed.amount%></h6><br/>
-                                    <a href="/payWithPaytm/middle">Click here to pay</a>
                                     <% } %>
                                 </div>
                                 <h6 class="card-subtitle mb-2 text-muted"><%= Feed.date.toString().split('GMT')[0] %></h6>
