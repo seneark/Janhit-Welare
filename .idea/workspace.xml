@@ -21,17 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0f6f01ca-1522-41cc-be74-a72dcde22707" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jwa/Routes/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jwa/Routes/payment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jwa/views/Suggestions.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jwa/views/Suggestions.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jwa/views/adminComplaint.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jwa/views/adminComplaint.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jwa/views/expense.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jwa/views/expense.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jwa/views/gallery.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jwa/views/gallery.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jwa/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jwa/views/homepage.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jwa/views/notification.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jwa/views/notification.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jwa/views/sendUser.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jwa/views/sendUser.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jwa/views/societyComplaint.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jwa/views/societyComplaint.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jwa/views/transaction.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jwa/views/transaction.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jwa/views/uploadPhotos.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jwa/views/uploadPhotos.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +56,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596084779634</updated>
-      <workItem from="1596084781744" duration="11593000" />
+      <workItem from="1596084781744" duration="12808000" />
+      <workItem from="1596126802641" duration="23000" />
     </task>
     <servers />
   </component>
@@ -83,6 +74,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2342" y="241" width="992" height="737" key="SettingsEditor" timestamp="1596085916581">
