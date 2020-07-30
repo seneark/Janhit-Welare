@@ -3,7 +3,7 @@
 ![Society Photo](/assets/1.jpg)
 
 ## Table of Contents
-- [Installation Prerequisites](installation-prerequisites)
+- [Installation Prerequisites](#installation-prerequisites)
 
 ## Installation Prerequisites
 - Nodejs
