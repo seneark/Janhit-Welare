@@ -2,13 +2,14 @@
 #### *For the Welfare of Society*
 ![Society Photo](/assets/1.jpg)
 
-## Website Demo
-[Click Here to Watch Video](https://drive.google.com/file/d/1wj1Tgwz1l3Ut9xOQCI70xGcFJ4233SS_/view)
-
 ## Table of Contents
 - [About](#about)
 - [Installation Prerequisites](#installation-prerequisites)
 - [How to Run this Website](#how-to-run-this-website)
+
+## Website Demo
+[Click Here to Watch Video](https://drive.google.com/file/d/1wj1Tgwz1l3Ut9xOQCI70xGcFJ4233SS_/view) \
+[Click Here to See the Presentation](https://onedrive.live.com/view.aspx?resid=DAE370BEB2B3D931!138&ithint=file%2cpptx&authkey=!AFSjLApmyo1wQW4)
 
 
 ## About
